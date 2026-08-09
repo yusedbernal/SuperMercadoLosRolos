@@ -1,0 +1,275 @@
+body {
+    /* LO QUE YO QUIERO Q ENTRE DE PRIMERA ES EL HEADER Y LUEGO EL RESTO DE LA PAGINA */
+  margin: 0;
+  padding: 0;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f8f9fa;
+  color: #212529;
+ 
+  min-height: 100vh;
+  width: 100%;
+}
+/* ==========================================
+   HEADER Y NAVEGACIÓN (Paleta Los Rolos)
+   ========================================== */
+
+/* Header principal con el azul dominante */
+.main-header {
+  background-color: #0A369D; /* Azul Corporativo */
+  color: #FFFFFF;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  position: relative;
+}
+
+/* Estilos para el Logo */
+.logo-img {
+  height: 65px;
+  width: auto;
+  display: block;
+}
+
+/* Título de la tienda */
+.header-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Ocultar el checkbox selector */
+.menu-toggle {
+  display: none;
+}
+
+/* Icono Hamburguesa (las 3 líneas) */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Menú de Navegación Móvil */
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #0A369D;
+  display: none; /* Oculto por defecto */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.nav-menu li a:hover {
+  background-color: #1D2D44; /* Azul Oscuro en Hover */
+}
+
+/* TRUCO CSS: Mostrar el menú cuando el checkbox está activado */
+.menu-toggle:checked ~ .nav-menu {
+  display: block;
+}
+
+/* ==========================================
+   VERSION ESCRITORIO (Pantallas grandes)
+   ========================================== */
+@media (min-width: 768px) {
+  .hamburger-icon {
+    display: none; /* Oculta la hamburguesa en PC */
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .nav-menu {
+    position: static;
+    display: block; /* Muestra el menú continuo */
+    width: auto;
+    border-top: none;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-menu li a {
+    padding: 0.5rem 1rem;
+    border-bottom: none;
+    border-radius: 4px;
+  }
+
+  .nav-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+
+/* ==========================================
+   SECCIÓN DE PRODUCTOS (CSS GRID)
+   ========================================== */
+
+.main-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  color: #0A369D; /* Azul Dominante */
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.section-title p {
+  color: #1D2D44; /* Azul Oscuro */
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* Grilla Responsiva de Productos */
+.productos-grid {
+  display: grid;
+  /* Crea columnas automáticamente de mínimo 240px de ancho */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem; /* Espacio entre cada tarjeta */
+}
+
+/* Estilo de la Tarjeta */
+.card-producto {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al pasar el cursor */
+.card-producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiqueta de Oferta (Rojo de Acento) */
+.badge-oferta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #E63946; /* Rojo Alerta */
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* Imagen del producto */
+.producto-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #F8F9FA;
+}
+
+/* Información del producto */
+.producto-info {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.producto-info h3 {
+  color: #1D2D44;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Precios */
+.precio {
+  color: #E63946; /* Rojo Alerta para el precio principal */
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: auto;
+}
+
+.precio-anterior {
+  color: #8D99AE;
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  font-weight: normal;
+  margin-left: 0.4rem;
+}
+
+/* Botón de compra */
+.btn-comprar {
+  background-color: #E63946;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #C12A36;
+}
