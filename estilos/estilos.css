@@ -1,24 +1,26 @@
+/* ==========================================
+   1. ESTILOS BASE Y GLOBALES
+   ========================================== */
 body {
-    /* LO QUE YO QUIERO Q ENTRE DE PRIMERA ES EL HEADER Y LUEGO EL RESTO DE LA PAGINA */
+  /* Todo el contenido de la página heredará esta base */
   margin: 0;
   padding: 0;
-
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: #f8f9fa;
   color: #212529;
- 
   min-height: 100vh;
   width: 100%;
 }
+
 /* ==========================================
-   HEADER Y NAVEGACIÓN (Paleta Los Rolos)
+   ↓↓↓ 2. INICIO DE HEADER Y NAVEGACIÓN ↓↓↓
    ========================================== */
 
 /* Header principal con el azul dominante */
 .main-header {
-  background-color: #0A369D; /* Azul Corporativo */
+  background-color: #0A369D; 
   color: #FFFFFF;
   width: 100%;
   position: sticky;
@@ -37,14 +39,13 @@ body {
   position: relative;
 }
 
-/* Estilos para el Logo */
+/* Estilos para el Logo y Título */
 .logo-img {
   height: 65px;
   width: auto;
   display: block;
 }
 
-/* Título de la tienda */
 .header-title {
   font-size: 1.2rem;
   font-weight: 700;
@@ -52,12 +53,11 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Ocultar el checkbox selector */
+/* Icono Hamburguesa y Control */
 .menu-toggle {
   display: none;
 }
 
-/* Icono Hamburguesa (las 3 líneas) */
 .hamburger-icon {
   display: flex;
   flex-direction: column;
@@ -83,7 +83,7 @@ body {
   left: 0;
   width: 100%;
   background-color: #0A369D;
-  display: none; /* Oculto por defecto */
+  display: none; 
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -104,54 +104,22 @@ body {
 }
 
 .nav-menu li a:hover {
-  background-color: #1D2D44; /* Azul Oscuro en Hover */
+  background-color: #1D2D44; 
 }
 
-/* TRUCO CSS: Mostrar el menú cuando el checkbox está activado */
+/* Mostrar el menú cuando el checkbox está activado */
 .menu-toggle:checked ~ .nav-menu {
   display: block;
 }
 
 /* ==========================================
-   VERSION ESCRITORIO (Pantallas grandes)
+   ↑↑↑ FIN DE HEADER Y NAVEGACIÓN ↑↑↑
    ========================================== */
-@media (min-width: 768px) {
-  .hamburger-icon {
-    display: none; /* Oculta la hamburguesa en PC */
-  }
-
-  .header-title {
-    font-size: 1.5rem;
-  }
-
-  .nav-menu {
-    position: static;
-    display: block; /* Muestra el menú continuo */
-    width: auto;
-    border-top: none;
-  }
-
-  .nav-menu ul {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .nav-menu li a {
-    padding: 0.5rem 1rem;
-    border-bottom: none;
-    border-radius: 4px;
-  }
-
-  .nav-menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-}
 
 
 /* ==========================================
-   SECCIÓN DE PRODUCTOS (CSS GRID)
+   3. ESTRUCTURA Y TEXTOS PRINCIPALES
    ========================================== */
-
 .main-container {
   max-width: 1200px;
   margin: 2rem auto;
@@ -164,26 +132,26 @@ body {
 }
 
 .section-title h2 {
-  color: #0A369D; /* Azul Dominante */
+  color: #0A369D; 
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
 }
 
 .section-title p {
-  color: #1D2D44; /* Azul Oscuro */
+  color: #1D2D44; 
   font-size: 0.95rem;
   opacity: 0.8;
 }
 
-/* Grilla Responsiva de Productos */
+/* ==========================================
+   4. GRILLA Y TARJETAS DE PRODUCTOS
+   ========================================== */
 .productos-grid {
   display: grid;
-  /* Crea columnas automáticamente de mínimo 240px de ancho */
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem; /* Espacio entre cada tarjeta */
+  gap: 1.5rem; 
 }
 
-/* Estilo de la Tarjeta */
 .card-producto {
   background-color: #FFFFFF;
   border: 1px solid #E0E0E0;
@@ -197,28 +165,11 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efecto al pasar el cursor */
 .card-producto:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Etiqueta de Oferta (Rojo de Acento) */
-.badge-oferta {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #E63946; /* Rojo Alerta */
-  color: #FFFFFF;
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-  z-index: 2;
-}
-
-/* Imagen del producto */
 .producto-img {
   width: 100%;
   height: 200px;
@@ -226,7 +177,6 @@ body {
   background-color: #F8F9FA;
 }
 
-/* Información del producto */
 .producto-info {
   padding: 1.2rem;
   display: flex;
@@ -240,9 +190,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Precios */
+/* ==========================================
+   5. COMPONENTES: PRECIOS, ETIQUETAS Y BOTONES
+   ========================================== */
 .precio {
-  color: #E63946; /* Rojo Alerta para el precio principal */
+  color: #E63946; 
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -257,7 +209,20 @@ body {
   margin-left: 0.4rem;
 }
 
-/* Botón de compra */
+.badge-oferta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #E63946; 
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
 .btn-comprar {
   background-color: #E63946;
   color: #FFFFFF;
@@ -273,3 +238,364 @@ body {
 .btn-comprar:hover {
   background-color: #C12A36;
 }
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.main-footer {
+  background-color: #0A369D;
+  color: #FFFFFF;
+  margin-top: 3rem;
+  padding: 1.5rem 1.5rem 0.8rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer-info strong {
+  font-size: 1rem;
+}
+
+.footer-info span {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.footer-social a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+  background-color: #FFFFFF;
+  color: #0A369D;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+
+/* ==========================================
+   PÁGINA DE CATEGORÍAS
+   ========================================== */
+
+.categorias-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.categorias-header h2 {
+  color: #0A369D;
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.categorias-header p {
+  color: #1D2D44;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+
+/* ==========================================
+   GRILLA DE CATEGORÍAS
+   ========================================== */
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+
+/* ==========================================
+   TARJETA DE CATEGORÍA
+   ========================================== */
+
+.categoria-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  padding: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  text-decoration: none;
+  color: inherit;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* Efecto al pasar el mouse */
+
+.categoria-card:hover {
+  transform: translateY(-5px);
+  border-color: #0A369D;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==========================================
+   ICONO
+   ========================================== */
+
+.categoria-icono {
+  width: 65px;
+  height: 65px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #F0F4FF;
+  border-radius: 50%;
+
+  font-size: 2rem;
+
+  transition: transform 0.2s ease;
+}
+
+
+.categoria-card:hover .categoria-icono {
+  transform: scale(1.1);
+}
+
+
+/* ==========================================
+   INFORMACIÓN
+   ========================================== */
+
+.categoria-info h3 {
+  color: #1D2D44;
+  font-size: 1.05rem;
+  margin: 0 0 0.3rem;
+}
+
+
+.categoria-info p {
+  color: #6C757D;
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+/* ==========================================
+   PÁGINA DE OFERTAS
+   ========================================== */
+
+.ofertas-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ofertas-etiqueta {
+  display: inline-block;
+  background-color: #E63946;
+  color: #FFFFFF;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+}
+
+.ofertas-header h2 {
+  color: #0A369D;
+  font-size: 1.9rem;
+  margin: 0 0 0.4rem;
+}
+
+.ofertas-header p {
+  color: #1D2D44;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+
+/* ==========================================
+   GRILLA
+   ========================================== */
+
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+
+/* ==========================================
+   TARJETA DE OFERTA
+   ========================================== */
+
+.oferta-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.oferta-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==========================================
+   IMAGEN
+   ========================================== */
+
+.oferta-imagen {
+  height: 210px;
+  position: relative;
+  background-color: #F8F9FA;
+}
+
+.oferta-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ==========================================
+   INFORMACIÓN
+   ========================================== */
+
+.oferta-info {
+  padding: 1.2rem;
+}
+
+.oferta-info h3 {
+  color: #1D2D44;
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem;
+}
+
+.oferta-descripcion {
+  color: #6C757D;
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
+
+
+/* ==========================================
+   PRECIOS
+   ========================================== */
+
+.oferta-precios {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.oferta-precio {
+  color: #E63946;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.oferta-anterior {
+  color: #8D99AE;
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}
+
+
+/* ==========================================
+   OFERTA PRÓXIMA
+   ========================================== */
+
+.oferta-proxima {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+  background-color: #F0F4FF;
+  border: 2px dashed #0A369D;
+}
+
+.oferta-proxima-contenido {
+  text-align: center;
+  padding: 2rem;
+}
+
+.oferta-proxima-contenido span {
+  font-size: 2.5rem;
+}
+
+.oferta-proxima-contenido h3 {
+  color: #0A369D;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.oferta-proxima-contenido p {
+  color: #6C757D;
+  font-size: 0.9rem;
+}
+
+
+/* ==========================================
+   CELULAR
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  .ofertas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .oferta-imagen {
+    height: 200px;
+  }
+
+}
+
