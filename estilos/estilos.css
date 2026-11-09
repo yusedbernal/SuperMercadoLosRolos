@@ -599,3 +599,218 @@ body {
 
 }
 
+/* ==========================================
+   PÁGINA DE LOGIN (pegar al final de estilos.css)
+   ========================================== */
+
+.login-caja {
+  max-width: 420px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-top: 5px solid #0A369D;
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.login-caja h2 {
+  color: #0A369D;
+  font-size: 1.6rem;
+  margin: 0 0 0.3rem;
+  text-align: center;
+}
+
+.login-caja > p {
+  color: #6C757D;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+.login-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.login-campo label {
+  color: #1D2D44;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.login-campo input {
+  padding: 0.7rem;
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-campo input:focus {
+  outline: 2px solid #0A369D;
+  border-color: #0A369D;
+}
+
+.login-pie {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 1.2rem 0 0;
+}
+
+.login-pie a {
+  color: #E63946;
+  font-weight: bold;
+}
+
+/* Selector de rol (atributo rol de Usuario) */
+.login-rol {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
+  padding: 0.6rem 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.login-rol legend {
+  color: #1D2D44;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0 0.3rem;
+}
+
+.login-rol label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.login-rol input {
+  accent-color: #0A369D;
+}
+
+/* Mensaje de error y enlace de ayuda */
+.login-error {
+  background-color: #FDECEE;
+  color: #C12A36;
+  border-left: 4px solid #E63946;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
+
+.login-olvido {
+  display: block;
+  text-align: center;
+  margin-top: 0.8rem;
+  color: #0A369D;
+  font-size: 0.85rem;
+}
+
+.login-olvido:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   PÁGINA DE LOGIN (pegar al final de estilos.css)
+   ========================================== */
+
+.login-caja {
+  max-width: 420px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-top: 5px solid #0A369D;
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.login-caja h2 {
+  color: #0A369D;
+  font-size: 1.6rem;
+  margin: 0 0 0.3rem;
+  text-align: center;
+}
+
+.login-caja > p {
+  color: #6C757D;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+.login-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.login-campo label {
+  color: #1D2D44;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.login-campo input {
+  padding: 0.7rem;
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-campo input:focus {
+  outline: 2px solid #0A369D;
+  border-color: #0A369D;
+}
+
+.login-pie {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 1.2rem 0 0;
+}
+
+.login-pie a {
+  color: #E63946;
+  font-weight: bold;
+}
+
+/* Mensaje de error y enlace de ayuda */
+.login-error {
+  background-color: #FDECEE;
+  color: #C12A36;
+  border-left: 4px solid #E63946;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
+
+.login-olvido {
+  display: block;
+  text-align: center;
+  margin-top: 0.8rem;
+  color: #0A369D;
+  font-size: 0.85rem;
+}
+
+.login-olvido:hover {
+  text-decoration: underline;
+}
+
+/* Mensaje de éxito (recuperar contraseña) */
+.login-exito {
+  background-color: #E8F5E9;
+  color: #1B5E20;
+  border-left: 4px solid #2E7D32;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
